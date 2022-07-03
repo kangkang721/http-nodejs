@@ -10,7 +10,7 @@ let server = net.createServer(function (socket) {
             if (err) socket.destroy();
             socket.once('data', (data) => {
                 console.log(1)
-                if (data.length < 7 || data[1] !== 0x01) return socket.destroy();  // 只支持 CONNECT 
+                //if (data.length < 7 || data[1] !== 0x01) return socket.destroy();  // 只支持 CONNECT 
                 try {
                     addrtype = data[3];// ADDRESS_TYPE 目标服务器地址类型
                     if (addrtype === 3) {//0x03 域名地址(没有打错，就是没有0x02)，
