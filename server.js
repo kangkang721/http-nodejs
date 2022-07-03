@@ -51,4 +51,5 @@ let server = net.createServer(function (socket) {
     });
     socket.on('error', function (err) { console.error(`error:${err.message}`); });
 });
-server.listen(process.env.PORT);
+server.listen(3000);
+console.log('process.env.PORT',process.env.PORT)
