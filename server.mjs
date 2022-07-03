@@ -12,7 +12,7 @@ let server = net.createServer(function (socket) {
                 console.log(1)
                 if (data.length < 7 || data[1] !== 0x01) return socket.destroy();  // 只支持 CONNECT 
                 try {
-                    addrtype = data[3];// ADDRESS_TYPE 目标服务器地址类型
+                    addrtype = data[3];// ADDRESS_TYPE 目标服务器地址类型1
                     if (addrtype === 3) {//0x03 域名地址(没有打错，就是没有0x02)，
                         addrLen = data[4];//域名地址的第1个字节为域名长度，剩下字节为域名名称字节数组
                     } else if (addrtype !== 1 && addrtype !== 4) {
